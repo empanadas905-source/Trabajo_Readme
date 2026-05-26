@@ -17,3 +17,9 @@ El diagrama de casos de uso define los limites del sistema y la interaccion de l
 
 [Diagrama de Caso de uso](Caso_De_Uso.png)
 
+### Descripcion y justificacion de relaciones
+
+* **Actores de negocio (Cliente y Administrador):** Representan los agentes externos autonomos. El `Cliente` interactua principalmente con el ciclo de vida de su cita (`Registrarse`,`Solicitar Turno`), mientras que el `administrador`posee un caso de uso exclusivo (`Registrar usuario`) para el control operacional y de personal dentro de la plataforma.
+* **Actores del sistema (servicio de notificacion y sistema de pagos):** Actores secundarios del tipo sistema (*system boundary*) que reaccionan de manera sincrona y asincrona ante los estimulos de bakend para procesar transacciones y despachar alertas.
+* **Relaciones de inclusion (`<<include>>`):** * El caso de uso `Confirmar Turno` incluye obligatoriamente a `Solicitar Turno` y `Notificar Turno`. Esto asegura que ninguna confirmacion de reserva sea consolidada en la base de datos sin una solicitud previa en el flujo y sin disparar la alerta correspondiente al cliente.
+* En el subsistema financiero, `Validad pago` incluye mandatoriamente a `notificar pago`, garantizando la trazabilidad y el acuse de recibo de la transaccion de cara al usuario
