@@ -24,3 +24,11 @@ El diagrama de casos de uso define los limites del sistema y la interaccion de l
 * **Relaciones de inclusion (`<<include>>`):** El caso de uso `Confirmar Turno` incluye obligatoriamente a `Solicitar Turno` y `Notificar Turno`. Esto asegura que ninguna confirmacion de reserva sea consolidada en la base de datos sin una solicitud previa en el flujo y sin disparar la alerta correspondiente al cliente.
 * En el subsistema financiero, `Validad pago` incluye mandatoriamente a `notificar pago`, garantizando la trazabilidad y el acuse de recibo de la transaccion de cara al usuario.
 * **Relaciones de Extension (`<<extend>>`):** El caso de uso central `Solicitar Turno` es extendido de manera condicional por `Cancelar Turno` y `Consultar Disponibilidad`. Estas extenciones representan flujos alternativos que el cliente puede o no ejercutar dependiendo del estado de la sesion y la necesidad del negocio, evitando sobrecargar el flujo principal de reserva.
+
+------------------------------
+
+## 3.- Arquitectura logica: Diagrama de clases
+
+El diseño logico del sistema se estructuro bajo el paradigma orientado a objetos, aplicando principios SOLID y garantizando un alto grado de cohesion.
+
+![Diagrama de Clases UML](Diagrama_De_Clase.png)
