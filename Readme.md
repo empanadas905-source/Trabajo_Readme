@@ -15,7 +15,7 @@
 
 El diagrama de casos de uso define los limites del sistema y la interaccion de los actores con las funcionalidades de la plataforma.
 
-[Diagrama de Caso de uso](Caso_De_Uso.png)
+![Diagrama de Caso de uso](Caso_De_Uso.png)
 
 ### Descripcion y justificacion de relaciones
 
