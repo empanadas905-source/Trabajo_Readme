@@ -32,3 +32,13 @@ El diagrama de casos de uso define los limites del sistema y la interaccion de l
 El diseño logico del sistema se estructuro bajo el paradigma orientado a objetos, aplicando principios SOLID y garantizando un alto grado de cohesion.
 
 ![Diagrama de Clases UML](Diagrama_De_Clase.png)
+
+### Justificacion profunda de patrones de diseño aplicados
+
+para resolver problemas recurrentes de acoplamiento, creacion de objetos y manejo de estado, se implementaron de forma estricta los siguentes patrones de diseño:
+
+#### A.-Patron creacional:`<<singleton>> GestorTurno`
+* **Problema resuelto:** La concurrencia descontrolada al asignar citas simultaneas podria generar sobreventas o duplicidad de un mismo bloque horario en el servidor.
+* **Solucion y justificacion:** se centralizo el control en las clase `GestorTurno` restringiendo su contructor a visibilidad privada (`-`) y exponiendo un punto de acceso global mediante el metodo estatico y publico `+getInstance(): GestorTurno`. Esto asegura una unica instancia de memorial global capaz de sincronizar y arbitrar la lectura/escritura de los estados de la clase `Turno`.
+
+
