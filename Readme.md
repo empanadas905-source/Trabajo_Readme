@@ -15,7 +15,7 @@
 
 El diagrama de casos de uso define los limites del sistema y la interaccion de los actores con las funcionalidades de la plataforma.
 
-![Diagrama de Caso de uso](Caso_De_Uso.png)
+![Diagrama de Caso de uso](Imagenes/Caso_De_Uso.png)
 
 ### Descripcion y justificacion de relaciones
 
@@ -31,7 +31,7 @@ El diagrama de casos de uso define los limites del sistema y la interaccion de l
 
 El diseño logico del sistema se estructuro bajo el paradigma orientado a objetos, aplicando principios SOLID y garantizando un alto grado de cohesion.
 
-![Diagrama de Clases UML](Diagrama_De_Clase.png)
+![Diagrama de Clases UML](Imagenes/Diagrama_De_Clase.png)
 
 ### Justificacion profunda de patrones de diseño aplicados
 
@@ -60,7 +60,7 @@ Encapsula las firmas y protocolos complejos de terceros bajo metodos estandariza
 
 El diagrama de implementacion modela la distribucion fisica del software en los nodos de hardware, detallando los entornos de ejecucion y los protocolos de red que soportan la carga transaccional.
 
-![Diagrama de implementacion UML](Diagrama_De_Implementacion.png) 
+![Diagrama de implementacion UML](Imagenes/Diagrama_De_Implementacion.png) 
 
 ### Decisiones tecnicas y componentes desplegados
 
