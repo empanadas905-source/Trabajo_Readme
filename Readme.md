@@ -57,3 +57,10 @@ Encapsula las firmas y protocolos complejos de terceros bajo metodos estandariza
 ------------------------------
 
 ## 4.-Arquitectura fisica: Diagrama de Implementacion
+
+El diagrama de implementacion modela la distribucion fisica del software en los nodos de hardware, detallando los entornos de ejecucion y los protocolos de red que soportan la carga transaccional.
+
+![Diagrama de implementacion UML](Diagrama_De_Implementacion.png) 
+
+### Decisiones tecnicas y componentes desplegados
+
