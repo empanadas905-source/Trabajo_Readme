@@ -70,4 +70,5 @@ La topologia del sistema se diseño bajo un modelo de arquitectura distribuida e
 | :--- | :--- | :--- | :---|
 | **Dispocitivo Cliente** *(PC / Smartphone)*  | Navegador web (chrome, safari, etc.) | `UI_Cliente.com` | **HTTPS (Puerto 443):** cifrado TLS para asegurar la confidencialidad de los datos de usuario hacia el servidor web. | 
 | **Servidor de aplicaciones** | Backend runtime (.NET core / java tomcat) | `ModuloTurnos.comp` <br> `ModuloNotificaciones.comp` <br> `ModuloPago.comp` | **TCP/IP / JDBC:** canal privado de comunicacion dedicado para persistencia de datos. | 
-
+| **Servidor Base de Datos** | Motor de base de datos relacional (MySQL / PostgreSQL) | `BD_Turnomatico.bd` (esquema de tablas) | **REST API / HTTPS:** conexcion saliente segura desde el servidor backend hacia nubes de terceros. | 
+| **Plataformas cloud externas** | entornos de proveedores (pasarelas de pago 7 APIs SMS) | `PasarelaPago.comp`<br>`ServicioMensajeria.comp` | - |
