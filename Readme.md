@@ -45,3 +45,8 @@ para resolver problemas recurrentes de acoplamiento, creacion de objetos y manej
 * **Problema resuelto:** La instanciacion repetitiva y masiva de objetos `Turno` para un calendario anual genera un alto costo de procesamiento y sobrecarga las consultas estructurales a la base de datos.
 * **Solucion y justificacion:** La clase `PlantillaTurno` encapsula la logica de clonacion mediante el metodo publico `+Clonar()`. El sistema configura un prototipo base con atributos genericos predeteminados y genera la parrilla de turnos mensuales duplicado dicho prototipo directamente en la memoria RAM, optimizando drasticamente el rendimiento del servidor.
 
+#### C.-Patron estructural: `<<Adapter>> Notificador`
+* **Problema resuelto:** Las APIs de proveedores externos de mensajeria (como twilio o sendGrind) modifican constantemente sus contratos de codigo o SDKs, lo qeu obligaria a refactorizar el nucleo del sistema ante cada actualizacion externa.
+* **Solucion y justificacion:** la clase `Notificador` actua como un adaptador intermedio.
+Encapsula las firmas y protocolos complejos de terceros bajo metodos estandarizados y publicos internamente (`+EnviarCorreo()`, `+EnviarSMS()`). El `GestorTurno` solo conoce la interfaz del adaptador, aislando por completo el dominio ante alteraciones de librerias externas.
+
