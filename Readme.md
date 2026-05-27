@@ -81,3 +81,9 @@ La topologia del sistema se diseño bajo un modelo de arquitectura distribuida e
 
 El proceso de modelado arquitectonico de **Turnomatico** demuestra de manera empirica que **el diseño de software previo a la fase de codificacion no es un gasto de tiempo, sino una inversion de mitigacion de riesgos**.
 
+### Conclusiones de ingieneria del proyecto:
+1. **Control del Impacto ante Cambios:** La aplicación del patrón **Bridge** demostró que es posible diseñar software preparado para la incertidumbre del mercado. Si el negocio decide migrar de proveedor de pagos, el costo de refactorización se reduce a cero en el núcleo del sistema, ya que el backend está desacoplado de las plataformas externas.
+
+2. **Garantía de Robustez mediante UML:** Diseñar los diagramas con una sintaxis estricta (visibilidades correctas, direccionalidad de herencias y tipado de métodos en el diagrama de clases) permitió identificar errores lógicos de cohesión antes de escribir la primera línea de código, evitando deudas técnicas catastróficas en fases avanzadas del proyecto.
+
+3. **Consistencia del Estado mediante la Centralización:** La arquitectura modelada en el **diagrama de implementación** demuestra cómo toda la carga transaccional de los clientes converge en un único **Servidor de Aplicaciones**. Esto garantiza que la lógica de negocio (como el `ModuloTurnos.comp`) maneje el estado de las filas de forma centralizada, asegurando la atomicidad y consistencia de los datos sin importar cuántos dispositivos usuarios se conecten simultáneamente.
