@@ -41,4 +41,7 @@ para resolver problemas recurrentes de acoplamiento, creacion de objetos y manej
 * **Problema resuelto:** La concurrencia descontrolada al asignar citas simultaneas podria generar sobreventas o duplicidad de un mismo bloque horario en el servidor.
 * **Solucion y justificacion:** se centralizo el control en las clase `GestorTurno` restringiendo su contructor a visibilidad privada (`-`) y exponiendo un punto de acceso global mediante el metodo estatico y publico `+getInstance(): GestorTurno`. Esto asegura una unica instancia de memorial global capaz de sincronizar y arbitrar la lectura/escritura de los estados de la clase `Turno`.
 
+#### B.-Patron creacional: `<<Prototype>> PlantillaTurno`
+* **Problema resuelto:** La instanciacion repetitiva y masiva de objetos `Turno` para un calendario anual genera un alto costo de procesamiento y sobrecarga las consultas estructurales a la base de datos.
+* **Solucion y justificacion:** La clase `PlantillaTurno` encapsula la logica de clonacion mediante el metodo publico `+Clonar()`. El sistema configura un prototipo base con atributos genericos predeteminados y genera la parrilla de turnos mensuales duplicado dicho prototipo directamente en la memoria RAM, optimizando drasticamente el rendimiento del servidor.
 
