@@ -72,3 +72,8 @@ La topologia del sistema se diseño bajo un modelo de arquitectura distribuida e
 | **Servidor de aplicaciones** | Backend runtime (.NET core / java tomcat) | `ModuloTurnos.comp` <br> `ModuloNotificaciones.comp` <br> `ModuloPago.comp` | **TCP/IP / JDBC:** canal privado de comunicacion dedicado para persistencia de datos. | 
 | **Servidor Base de Datos** | Motor de base de datos relacional (MySQL / PostgreSQL) | `BD_Turnomatico.bd` (esquema de tablas) | **REST API / HTTPS:** conexcion saliente segura desde el servidor backend hacia nubes de terceros. | 
 | **Plataformas cloud externas** | entornos de proveedores (pasarelas de pago 7 APIs SMS) | `PasarelaPago.comp`<br>`ServicioMensajeria.comp` | - |
+
+> **Nota de seguridad arquitectonica:** El servidor de base de datos se encuentra aislado dentro de una subred privada. No posee direccionamiento IP publico, lo que mitiga vectores de ataques externos; toda peticion obligatoriamente debe ser autenticada y canalizada a traves del servidor de aplicaciones.
+
+------------------------------
+
