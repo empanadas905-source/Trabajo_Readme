@@ -64,3 +64,10 @@ El diagrama de implementacion modela la distribucion fisica del software en los 
 
 ### Decisiones tecnicas y componentes desplegados
 
+La topologia del sistema se diseño bajo un modelo de arquitectura distribuida en tres capas para garantizar seguridad y escalabilidad horizontal:
+
+| Nodo Fisico (`<<device>>`) | Entorno de ejecucion (`<<execution environment>>`) | componentes albergados | protocolo de coneccion |
+| :--- | :--- | :--- | :---|
+| **Dispocitivo Cliente** *(PC / Smartphone)*  | Navegador web (chrome, safari, etc.) | `UI_Cliente.com` | **HTTPS (Puerto 443):** cifrado TLS para asegurar la confidencialidad de los datos de usuario hacia el servidor web. | 
+| **Servidor de aplicaciones** | Backend runtime (.NET core / java tomcat) | `ModuloTurnos.comp` <br> `ModuloNotificaciones.comp` <br> `ModuloPago.comp` | **TCP/IP / JDBC:** canal privado de comunicacion dedicado para persistencia de datos. | 
+
