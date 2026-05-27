@@ -50,3 +50,6 @@ para resolver problemas recurrentes de acoplamiento, creacion de objetos y manej
 * **Solucion y justificacion:** la clase `Notificador` actua como un adaptador intermedio.
 Encapsula las firmas y protocolos complejos de terceros bajo metodos estandarizados y publicos internamente (`+EnviarCorreo()`, `+EnviarSMS()`). El `GestorTurno` solo conoce la interfaz del adaptador, aislando por completo el dominio ante alteraciones de librerias externas.
 
+#### D.-Patron estructural: `<<Bridge>> InterfazPago`
+* **Problema resuelto:** Un acoplamiento directo entre el flujo de control financiero y las pasarelas de pago fisicas genera rigidez arquitectonica, impidiendo agregar nuevos metodos de pago sin alterar la logica de negocio existente.
+* **Solucion y justificacion:** se aplico una separacion estricta entre la abstraccion y la implementacion. La clase `InterfazPago` maneja la logica de control operacional del negocio y se desacopla mediante una relacion de asociacion dirigida hacia la interfaz abstracta `<<Interface>> Pago`. Las imprementaciones concretas de la plataforma (`PagoTransferencias` y `PagoTarjeta`) realizan dicha interfaz mediante una relacion de realizacion formal (`- - ->`). Esto faculta la adiccion o intercambio de mecanismos fisicos de recaudacion en tiempo de ejecucion sin alterar el codigo de la capa de abstraccion.
