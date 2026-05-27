@@ -77,3 +77,7 @@ La topologia del sistema se diseño bajo un modelo de arquitectura distribuida e
 
 ------------------------------
 
+## 5.-Reflexiones finales del modelado
+
+El proceso de modelado arquitectonico de **Turnomatico** demuestra de manera empirica que **el diseño de software previo a la fase de codificacion no es un gasto de tiempo, sino una inversion de mitigacion de riesgos**.
+
